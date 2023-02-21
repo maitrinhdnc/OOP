@@ -1,0 +1,1 @@
+User enter an Id of Article will export an PDF file with ID, name, price of article
