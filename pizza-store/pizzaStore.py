@@ -1,9 +1,10 @@
 from pizza import *
+import asyncio
 class PizzaStore:
     def __init__(self) -> None:
         pass
 
-    def orderPizza(self, typePizza):
+    async def orderPizza(self, typePizza):
         pizza = Pizza
         match typePizza:
             case "cheese":
@@ -15,10 +16,14 @@ class PizzaStore:
             case _:
                 print("We do not have this pizza!!!") 
                 return
+        await asyncio.sleep(1)
         pizza.prepare()
 
+        await asyncio.sleep(1)
         pizza.bake()
-
+       
+        await asyncio.sleep(1)
         pizza.cut()
-
+        
+        await asyncio.sleep(1)
         pizza.box()
